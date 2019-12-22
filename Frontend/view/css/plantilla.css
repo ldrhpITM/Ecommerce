@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Ubuntu+Condensed&display=swap');
+
+
+*{
+	margin:0px;
+	padding:0px;
+	list-style: none;
+	text-decoration: none;
+	font-family: 'Ubunt', sans-serif;
+}
+
+ul, ol{
+	padding:0px;
+}
+
+a:visited, a:link, a:focus, a:hover, a:active{
+	list-style: none;
+	text-decoration: none;
+}
+
+.barraSuperior{
+	background:black;
+}
+
+.barraSuperior a{
+	color:white;
+}
+
+.backColor, .backColor a{
+	background:#47bac1;
+	color:white;
+}
+
+/**********Redes sociales***************/
+
+.redSocial{
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+}
+
+
+/*FACEBOOK*/
+
+.facebookBlanco{
+	color:white;
+}
+
+.facebookNegro{
+	color:black;
+}
+
+.facebookColor{
+	color:white;
+	background:#46639f;
+}
+
+/*YOUTUBE*/
+
+.youtubeColor{
+	color:white;
+	background:#d6513e;
+}
+
+.youtubeBlanco{
+	color:white;
+}
+
+.youtubeNegro{
+	color:black;
+}
+
+/*TWITTER*/
+
+.twitterColor{
+	color:white;
+	background:#0ab2e6;
+}
+
+.twitterBlanco{
+	color:white;
+}
+
+.twitterNegro{
+	color:black;
+}
+
+/*GOOGLE PLUS*/
+
+.googleColor{
+	color:white;
+	background:#d71617;
+}
+
+.googleBlanco{
+	color:white;
+}
+
+.googleNegro{
+	color:black;
+}
+
+/*INSTAGRAM*/
+
+.instagramColor{
+	color:white;
+	background:linear-gradient(45deg, #fca925, #ee1d5f,  #6350a2);
+
+}
+
+.instagramBlanco{
+	color:white;
+}
+
+.instagramNegro{
+	color:black;
+}
