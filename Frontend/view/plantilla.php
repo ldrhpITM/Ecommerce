@@ -12,13 +12,14 @@
     <link rel="stylesheet" href="view/css/plugins/font-awesome.min.css">
     <link rel="stylesheet" href="view/css/plantilla.css">
     <link rel="stylesheet" href="view/css/cabezote.css">
-    
-    <script script="view/js/plugins/jquery.min.js"></script>
-    <script script="view/js/plugins/bootstrap.min.js"></script>
+    <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <script src="view/js/plugins/jquery-3.4.1.min.js"></script>
+    <script src="view/js/plugins/bootstrap.min.js"></script>
 </head>
 <body>
     <?php
         include "modules/cabezote.php";
     ?>
+    <script src="view/js/cabezote.js"></script>
 </body>
 </html>

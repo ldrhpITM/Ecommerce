@@ -6,31 +6,18 @@
 			======================================-->
 			<div class="col-lg-9 col-md-9 col-sm-8 col-xs-12 social">
 				<ul>	
-					<li>
-						<a href="http://facebook.com/" target="_blank">
-							<i class="fa fa-facebook redSocial facebookBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
-					<li>
-						<a href="http://youtube.com/" target="_blank">
-							<i class="fa fa-youtube redSocial youtubeBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
-					<li>
-						<a href="http://twitter.com/" target="_blank">
-							<i class="fa fa-twitter redSocial twitterBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
-					<li>
-						<a href="http://google.com/" target="_blank">
-							<i class="fa fa-google-plus redSocial googleBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
-					<li>
-						<a href="http://instagram.com/" target="_blank">
-							<i class="fa fa-instagram redSocial instagramBlanco" aria-hidden="true"></i>
-						</a>
-					</li>
+					<?php
+						$social = ControladorPlantilla::ctrEstiloPlantilla();
+						$jsonRedesSociales=json_decode($social["redesSociales"],true);
+						foreach ($jsonRedesSociales as $data) {
+							echo '<li>
+									<a href="'.$data["url"].'" target="_blank">
+										<i class="fa '.$data["red"].' redSocial '.$data["estilo"].'" aria-hidden="true"></i>
+									</a>
+								 </li>';
+						}
+					?>
+					
 				</ul>
 			</div>
 
@@ -82,7 +69,7 @@
 								<i class="fa fa-bars" aria-hidden="true"></i>
 							</span>					
 						</p>-->
-						<button class="btn btn-primary btn-sm btn-block" type="submit">
+						<button class="btn btn-primary btn-sm btn-block" type="submit" id="btnCategorias">
 							Categorias <i class="fa fa-bars pull-right" aria-hidden="true"></i>
 						</button>
 					</div>
