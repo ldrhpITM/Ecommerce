@@ -8,6 +8,11 @@
     <meta name="description" content="Esto es  una  prueba">
     <meta name="keyword" content="preuba tienda virtual">
     <title>Tienda Virtual</title>
+    <?php
+		$icono = ControladorPlantilla::ctrEstiloPlantilla();
+		echo '<link rel="icon" href="http://localhost/Ecommerce/Frontend/'.$icono["icono"].'">'
+	?>
+    
     <link rel="stylesheet" href="view/css/plugins/bootstrap.min.css">
     <link rel="stylesheet" href="view/css/plugins/font-awesome.min.css">
     <link rel="stylesheet" href="view/css/plantilla.css">
@@ -21,5 +26,6 @@
         include "modules/cabezote.php";
     ?>
     <script src="view/js/cabezote.js"></script>
+    <script src="view/js/plantilla.js"></script>
 </body>
 </html>

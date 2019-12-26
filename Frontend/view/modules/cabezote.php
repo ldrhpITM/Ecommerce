@@ -51,7 +51,7 @@
 			======================================-->			
 			<div class="col-lg-3 col-md-3 col-sm-2 col-xs-12" id="logotipo">				
 				<a href="#">						
-					<img src="http://localhost/Ecommerce/Frontend/view/img/plantilla/logo.png" alt="" class="img-fluid">
+					<img src="http://localhost/Ecommerce/Frontend/<?php echo $social["logo"]; ?>" alt="" class="img-fluid">
 				</a>				
 			</div>
 
