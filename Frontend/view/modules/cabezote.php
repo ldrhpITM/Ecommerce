@@ -106,32 +106,28 @@
     <!--============Categorias==============-->
         <div class="col-xl-12 backColor" id="categorias">
             <div class="row">
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
-                    <h4>
-                        <a href="#" class="pixelCategorias">Lorem Ipsum</a>
-                    </h4>				
-                    <hr>
-                    <ul>					
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>			
-                    </ul>
-                </div>
-                <div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
-                    <h4>
-                        <a href="#" class="pixelCategorias">Lorem Ipsum</a>
-                    </h4>				
-                    <hr>
-                    <ul>					
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>
-                        <li><a href="#" class="pixelSubCategorias">Lorem Ipsum</a></li>			
-                    </ul>
-                </div>	
+			<?php
+				$categorias=ControladorProductos::ctrMostrarCategorias();
+				
+				foreach ($categorias as $key => $categoria) {
+					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
+							<h4>
+								<a href="'.$categoria['ruta'].'" class="pixelCategorias">'.$categoria['categoria'].'</a>
+							</h4>				
+							<hr>
+							<ul>';				
+							$subcategorias=ControladorProductos::ctrMostrarSubCategorias($categoria['id']);
+							
+							foreach ($subcategorias as $key => $subcategoria) {
+								echo '<li><a href="'.$subcategoria['ruta'].'" class="pixelSubCategorias">'.$subcategoria['subcategoria'].'</a></li>';
+							}
+							echo '						
+										
+							</ul>
+						</div>';
+				}
+			?>
+                	
             </div>
         </div>
     </div>
