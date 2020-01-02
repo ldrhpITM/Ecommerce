@@ -107,7 +107,9 @@
         <div class="col-xl-12 backColor" id="categorias">
             <div class="row">
 			<?php
-				$categorias=ControladorProductos::ctrMostrarCategorias();
+				$item=null;
+				$valor=null;
+				$categorias=ControladorProductos::ctrMostrarCategorias($item,$valor);
 				
 				foreach ($categorias as $key => $categoria) {
 					echo '<div class="col-lg-2 col-md-3 col-sm-4 col-xs-12">				
@@ -115,8 +117,10 @@
 								<a href="'.$categoria['ruta'].'" class="pixelCategorias">'.$categoria['categoria'].'</a>
 							</h4>				
 							<hr>
-							<ul>';				
-							$subcategorias=ControladorProductos::ctrMostrarSubCategorias($categoria['id']);
+							<ul>';			
+							$item="categoria_id";
+							$valor=	$categoria['id'];
+							$subcategorias=ControladorProductos::ctrMostrarSubCategorias($item, $valor);
 							
 							foreach ($subcategorias as $key => $subcategoria) {
 								echo '<li><a href="'.$subcategoria['ruta'].'" class="pixelSubCategorias">'.$subcategoria['subcategoria'].'</a></li>';

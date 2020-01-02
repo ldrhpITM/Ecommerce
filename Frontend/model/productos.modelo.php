@@ -2,19 +2,26 @@
 require_once "conexion.php";
 
 class ModeloProductos{
-  static public function mdlMostrarCategorias($tabla)
+  static public function mdlMostrarCategorias($tabla, $item, $valor)
   {
-    $stmt=Conexion::conectar()->prepare("select * from $tabla");
-    $stmt->execute();
-    return $stmt->fetchAll();
+    if ($item!=null) {
+      $stmt=Conexion::conectar()->prepare("select * from $tabla WHERE $item=:$item");
+      $stmt->bindParam(':'.$item,$valor,PDO::PARAM_STR);
+      $stmt->execute();
+      return $stmt->fetch();
+    }else{
+      $stmt=Conexion::conectar()->prepare("select * from $tabla");
+      $stmt->execute();
+      return $stmt->fetchAll();
+    }
     $stmt->close();
    // $stmt=null;
   }
 
-  static public function mdlMostrarSubCategorias($tabla,$id)
+  static public function mdlMostrarSubCategorias($tabla,$item, $valor)
   {
-    $stmt=Conexion::conectar()->prepare("select * from $tabla where categoria_id=:categoria_id");
-    $stmt->bindParam(':categoria_id',$id,PDO::PARAM_INT);
+    $stmt=Conexion::conectar()->prepare("select * from $tabla where $item=:$item");
+    $stmt->bindParam(':'.$item,$valor,PDO::PARAM_INT);
     $stmt->execute();
     return $stmt->fetchAll();
     $stmt->close();
