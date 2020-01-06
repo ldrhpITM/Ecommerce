@@ -15,14 +15,14 @@
         $url=Ruta::ctrRuta();
     ?>
     
-    <link rel="stylesheet" href="<?php echo $url ?>view/css/plugins/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/plugins/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/plantilla.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/cabezote.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/slide.css">
     <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
     <script src="<?php echo $url ?>view/js/plugins/jquery-3.4.1.min.js"></script>
-    <script src="<?php echo $url ?>view/js/plugins/bootstrap.min.js"></script>
+    <script src="<?php echo $url ?>view/js/plugins/jquery.easing.js"></script>
 </head>
 <body>
     <?php
@@ -58,8 +58,12 @@
             include "modules/slide.php";  
         }
     ?>
+ 
 
     <script src="<?php echo $url ?>view/js/cabezote.js"></script>
     <script src="<?php echo $url ?>view/js/plantilla.js"></script>
+    <script src="<?php echo $url ?>view/js/slide.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
 </body>
 </html>
