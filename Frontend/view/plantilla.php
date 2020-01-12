@@ -9,8 +9,9 @@
     <meta name="keyword" content="preuba tienda virtual">
     <title>Tienda Virtual</title>
     <?php
+        $servidor=Ruta::ctrRutaServidor();
 		$icono = ControladorPlantilla::ctrEstiloPlantilla();
-		echo '<link rel="icon" href="http://localhost/Ecommerce/Frontend/'.$icono["icono"].'">';
+		echo '<link rel="icon" href="'.$servidor.$icono["icono"].'">';
         //mantener  fija del proyecto
         $url=Ruta::ctrRuta();
     ?>

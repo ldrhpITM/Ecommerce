@@ -10,6 +10,9 @@ var btnVerProducto=$("slide button");
 var detenerIntervalo=false;
 var toggle=false;
 
+$("#slide ul li").css({"width":100/$("#slide ul li").length+"%"});
+$("#slide ul ").css({"width":$("#slide ul li").length*100+"%"});
+
 $(imgProducto[item]).animate({"top":-10+"%", "opacity":0},100);
 $(imgProducto[item]).animate({"top":30+"px", "opacity":1},600);
 
@@ -31,6 +34,7 @@ $('#paginacion li').click(function () {
 /**********movimiento del slide********************/
 
 function movimientoSlide(item) {
+    $("#slide ul li").finish();
     $("#slide ul").animate({"left":item*-100+"%"}, 1000, "easeOutQuart");
     $("#paginacion li").css({"opacity":.5});
     $(itemPaginacion[item]).css({"opacity":1});
@@ -51,11 +55,12 @@ function movimientoSlide(item) {
 
 /***********Avanzar***********/
 function avanzar() {
-    if(item==3){
+    if(item==$("#slide ul li").length-1){
         item=0;
     }else{
         item++;
     }
+    interrumpirCiclo=true;
     movimientoSlide(item);
 }
 $('#slide #avanzar').click(function () {
@@ -64,7 +69,7 @@ $('#slide #avanzar').click(function () {
 /***********Retroceder***********/
 $('#slide #retroceder').click(function () {
     if(item==0){
-        item=3;
+        item=$("#slide ul li").length-1;
     }else{
         item--;
     }
@@ -76,13 +81,15 @@ $('#slide #retroceder').click(function () {
 setInterval(function () {
     if (interrumpirCiclo) {
         interrumpirCiclo=false;
+        detenerIntervalo=false;
+        $("#slide ul li").finish();
     }else{
         if (!detenerIntervalo) {
             avanzar();
         }
     }
     
-},9000);
+},5000);
 
 /************Aparecer flechas***********/
 $("#slide").mouseover(function() {
