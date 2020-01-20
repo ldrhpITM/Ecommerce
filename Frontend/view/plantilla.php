@@ -17,11 +17,14 @@
     ?>
     
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <!-----style-------->
     <link rel="stylesheet" href="<?php echo $url ?>view/css/plugins/font-awesome.min.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/plantilla.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/cabezote.css">
     <link rel="stylesheet" href="<?php echo $url ?>view/css/slide.css">
+    <link rel="stylesheet" href="<?php echo $url ?>view/css/productos.css">
     <!--<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>-->
+    <!-----JS-------->
     <script src="<?php echo $url ?>view/js/plugins/jquery-3.4.1.min.js"></script>
     <script src="<?php echo $url ?>view/js/plugins/jquery.easing.js"></script>
 </head>
@@ -57,6 +60,7 @@
             }
         }else{
             include "modules/slide.php";  
+            include "modules/destacados.php";  
         }
     ?>
  
