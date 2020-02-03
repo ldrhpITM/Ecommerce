@@ -27,6 +27,7 @@
     <!-----JS-------->
     <script src="<?php echo $url ?>view/js/plugins/jquery-3.4.1.min.js"></script>
     <script src="<?php echo $url ?>view/js/plugins/jquery.easing.js"></script>
+    <script src="<?php echo $url ?>view/js/plugins/jquery.scrollUp.js"></script>
 </head>
 <body>
     <?php

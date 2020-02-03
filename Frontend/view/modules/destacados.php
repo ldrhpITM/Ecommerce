@@ -399,7 +399,7 @@
 
         </div>
         <!--***********Cuadricula**************-->
-        <ul class="grid1" style="display: none;">
+        <ul class="grid1">
             <div class="row">
                 <!-- ********Producto 1********** -->
                 <li class="col-md-3 col-sm-6 col-xs-12">
@@ -582,7 +582,7 @@
             </div>
         </ul>
         <!--***********lista**************-->
-        <ul class="list1">
+        <ul class="list1" style="display: none;">
             <div class="row">
                 <li class="col-12">
                     <div class="row">
@@ -673,7 +673,7 @@
         </div>
        
         <!--***********Cuadricula**************-->
-        <ul class="grid2" style="display: none">
+        <ul class="grid2" >
             <div class="row">
                 <!-- ********Producto 1********** -->
                 <li class="col-md-3 col-sm-6 col-xs-12">
@@ -886,7 +886,7 @@
             </div>
         </ul>
         <!--***********lista**************-->
-        <ul class="list2">
+        <ul class="list2" style="display: none;">
             <div class="row">
                 <li class="col-12">
                     <div class="row">
