@@ -15,4 +15,12 @@ class ControladorProductos{
         $respuesta=ModeloProductos::mdlMostrarSubCategorias($tabla, $item, $valor);
         return $respuesta;
     }
+
+    //mostrar Productos
+    static public function ctrMostrarProductos($ordenar, $item, $valor)
+    {
+        $tabla="Productos";
+        $respuesta=ModeloProductos::mdlMostrarProductos($tabla, $ordenar, $item, $valor);
+        return  $respuesta;
+    }
 }
