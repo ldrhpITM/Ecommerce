@@ -29,10 +29,10 @@ class ModeloProductos{
   }
 
   //mostrar Productos
-  static public function mdlMostrarProductos($tabla, $ordenar, $item, $valor)
+  static public function mdlMostrarProductos($tabla, $ordenar, $item, $valor,$base, $tope)
   {
     if ($item!=null) {
-      $stmt=Conexion::conectar()->prepare("select * from $tabla where $item=:$item ORDER BY $ordenar  DESC LIMIT 4");
+      $stmt=Conexion::conectar()->prepare("select * from $tabla where $item=:$item ORDER BY $ordenar  DESC LIMIT $base, $tope");
       $stmt->bindParam(':'.$item,$valor,PDO::PARAM_INT);
       $stmt->execute();
       return $stmt->fetchAll();
