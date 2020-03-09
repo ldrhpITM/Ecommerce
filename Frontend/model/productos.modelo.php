@@ -43,4 +43,14 @@ class ModeloProductos{
     }
     $stmt->close();
   }
+
+  //mostrar info producto
+  static public function mdlMostrarInfProducto($tabla, $item, $valor)
+  {
+    $stmt=Conexion::conectar()->prepare("select * from $tabla where $item=:$item");
+    $stmt->bindParam(':'.$item,$valor,PDO::PARAM_STR);
+    $stmt->execute();
+    return $stmt->fetch();
+    $stmt->close();
+  }
 }

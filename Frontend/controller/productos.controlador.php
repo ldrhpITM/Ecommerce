@@ -17,10 +17,17 @@ class ControladorProductos{
     }
 
     //mostrar Productos
-    static public function ctrMostrarProductos($ordenar, $item, $valor)
+    static public function ctrMostrarProductos($ordenar, $item, $valor,$base, $tope)
     {
         $tabla="Productos";
-        $respuesta=ModeloProductos::mdlMostrarProductos($tabla, $ordenar, $item, $valor);
+        $respuesta=ModeloProductos::mdlMostrarProductos($tabla, $ordenar, $item, $valor,$base, $tope);
+        return  $respuesta;
+    }
+    //mostrar info producto
+    static  public function ctrMostrarInfoProducto($item, $valor)
+    {
+        $tabla="Productos";
+        $respuesta=ModeloProductos::mdlMostrarInfProducto($tabla, $item, $valor);
         return  $respuesta;
     }
 }

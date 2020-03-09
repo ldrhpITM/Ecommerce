@@ -36,6 +36,7 @@
         /*--------Contenido Dinamico-----------*/
         $rutas=array();
         $ruta=null;
+        $infoProducto=null;
         if (isset($_GET['ruta'])) {
             $rutas=explode("/", $_GET['ruta']);
             $item="ruta";
@@ -53,9 +54,16 @@
                     $ruta=$valor;
                  }
             }
+             /*----------------URLs Amigables de Procutos---------------------*/
+             $rutaProductos=ControladorProductos::ctrMostrarInfoProducto($item,$valor);
+             if ($valor==$rutaProductos['ruta']) {
+                $infoProducto=$valor;
+             }
             /*----------------Lista Blanca de URLs Amigables---------------------*/
             if($ruta!=null || $rutas[0] == "articulos-gratis" || $rutas[0] == "lo-mas-vendido" || $rutas[0] == "lo-mas-visto"){
                 include "modules/productos.php";
+            }elseif($infoProducto!=null){
+                include "modules/infoproducto.php";
             }else{
                 include "modules/error404.php";  
             }
