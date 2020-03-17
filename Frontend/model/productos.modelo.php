@@ -21,7 +21,7 @@ class ModeloProductos{
   static public function mdlMostrarSubCategorias($tabla,$item, $valor)
   {
     $stmt=Conexion::conectar()->prepare("select * from $tabla where $item=:$item");
-    $stmt->bindParam(':'.$item,$valor,PDO::PARAM_INT);
+    $stmt->bindParam(':'.$item,$valor,PDO::PARAM_STR);
     $stmt->execute();
     return $stmt->fetchAll();
     $stmt->close();
@@ -37,7 +37,7 @@ class ModeloProductos{
       $stmt->execute();
       return $stmt->fetchAll();
     }else{
-      $stmt=Conexion::conectar()->prepare("select * from $tabla ORDER BY $ordenar  DESC LIMIT 4");
+      $stmt=Conexion::conectar()->prepare("select * from $tabla ORDER BY $ordenar  DESC LIMIT $base, $tope");
       $stmt->execute();
       return $stmt->fetchAll();
     }
